@@ -20,18 +20,18 @@ public class ExercisesFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-      //  exercisesViewModel =
-            //    ViewModelProviders.of(this).get(ExercisesViewModel.class);
+        exercisesViewModel =
+               ViewModelProviders.of(this).get(ExercisesViewModel.class);
         View root = inflater.inflate(R.layout.fragment_exercises, container, false);
 
 
-       // final TextView textView = root.findViewById(R.id.text_exercises);
-       // exercisesViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-        //    @Override
-         //   public void onChanged(@Nullable String s) {
-          //      textView.setText(s);
-          //  }
-       // });
+       final TextView textView = root.findViewById(R.id.text_exercises);
+       exercisesViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+           @Override
+           public void onChanged(@Nullable String s) {
+               textView.setText(s);
+           }
+       });
         return root;
     }
 }

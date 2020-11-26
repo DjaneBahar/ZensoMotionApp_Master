@@ -4,10 +4,12 @@ import android.os.Bundle;
 
 import com.example.application.toolbarapp.ui.exercises.ExercisesFragment;
 import com.example.application.toolbarapp.ui.home.HomeFragment;
+import com.example.application.toolbarapp.ui.insights.InsightsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -30,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+
+        fragmentTransaction.add(R.id.container,new HomeFragment());
+        fragmentTransaction.commit();
 
         /*ExercisesFragment exercisesFragment = new ExercisesFragment();
         FragmentManager fm = getSupportFragmentManager();

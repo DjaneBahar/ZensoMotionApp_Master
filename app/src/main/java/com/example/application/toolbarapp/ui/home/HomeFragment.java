@@ -1,11 +1,13 @@
 package com.example.application.toolbarapp.ui.home;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Button;
 
@@ -29,6 +31,10 @@ public class HomeFragment extends Fragment {
     private Button exercisesBtn;
     private Button profileBtn;
     private Button insightsBtn;
+    private ImageView profileImage;
+    private ImageView exercisesImage;
+    private ImageView insightsImage;
+    private TextView showTextView;
 
     public HomeFragment(){
 
@@ -42,42 +48,43 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
 
-        profileBtn = view.findViewById(R.id.profile_btn);
-        profileBtn.setOnClickListener(new View.OnClickListener() {
+
+        profileImage  = view.findViewById(R.id.profile_image);
+        profileImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ProfileFragment profileFragment = new ProfileFragment();
+
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.homeLayout,profileFragment);
+                transaction.replace(R.id.homeLayout,new ProfileFragment());
                 transaction.commit();
             }
         });
 
 
-        exercisesBtn = view.findViewById(R.id.exercises_btn);
-        exercisesBtn.setOnClickListener(new View.OnClickListener(){
+        exercisesImage = view.findViewById(R.id.exercises_image);
+        exercisesImage.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
 
-                ExercisesFragment exercisesFragment = new ExercisesFragment();
+
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.homeLayout,exercisesFragment);
+                transaction.replace(R.id.homeLayout, new ExercisesFragment());
                 transaction.commit();
 
             }
 
         });
 
-        insightsBtn = view.findViewById(R.id.insights_btn);
-        insightsBtn.setOnClickListener(new View.OnClickListener() {
+        insightsImage = view.findViewById(R.id.insights_image);
+        insightsImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                InsightsFragment insightsFragment = new InsightsFragment();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.homeLayout,insightsFragment);
-                transaction.commit();
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.homeLayout,new InsightsFragment());
+                fragmentTransaction.commit();
+
             }
         });
 
@@ -89,12 +96,6 @@ public class HomeFragment extends Fragment {
                 textView.setText(s);
             }
         });
-
-
-
-
-
-
 
 
         return view;

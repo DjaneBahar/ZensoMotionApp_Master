@@ -33,8 +33,6 @@ public class InsightsFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_insights, container, false);
 
-
-
         final TextView textView = view.findViewById(R.id.text_insights);
         insightsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
