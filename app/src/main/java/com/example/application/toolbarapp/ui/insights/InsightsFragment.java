@@ -18,7 +18,7 @@ import com.example.application.toolbarapp.R;
 import com.example.application.toolbarapp.ui.exercises.ExercisesFragment;
 import com.example.application.toolbarapp.ui.home.HomeViewModel;
 
-public class InsightsFragment extends Fragment {
+public class InsightsFragment extends  androidx.fragment.app.Fragment {
 
     private InsightsViewModel insightsViewModel;
 
