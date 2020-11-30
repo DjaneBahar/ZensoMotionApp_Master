@@ -55,7 +55,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
 
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_main,new ProfileFragment());
+                transaction.replace(R.id.nav_host_fragment_container,new ProfileFragment());
                 transaction.commit();
             }
         });
