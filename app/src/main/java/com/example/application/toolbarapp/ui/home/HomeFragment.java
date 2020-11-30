@@ -54,7 +54,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-               FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_main,new ProfileFragment());
                 transaction.commit();
             }
@@ -82,7 +82,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
 
                 Fragment f = new InsightsFragment();
-               FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_main,f);
                 fragmentTransaction.commit();
 
